@@ -1,0 +1,57 @@
+---
+title: "Presentation Ninja"
+subtitle: "⚔<br/>with xaringan"
+author: "Yihui Xie"
+institute: "RStudio, PBC"
+date: "2016/12/12 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+# Level 1
+
+## Subsection
+
+hello world
+
+```{r}
+2 + 2
+```
+
+---
+
+# Slide 3
+
+```{r,include=FALSE}
+library(tidyverse)
+library(here)
+```
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE,out.width="100%",fig.height=4,fig.retina=2,dpi=300}
+mtcars %>% 
+  ggplot() +
+  aes(mpg,wt) +
+  geom_point() +
+  geom_smooth(method=lm)
+```
+
+---
+# a table
+
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+read.csv(file=here("data","tidy","mtcars_tidy")) %>%
+  mutate_if(is.numeric,round,digit=2) %>%
+  arrange(cyl) %>%
+  knitr::kable()
+```
+
+
+
+
+
