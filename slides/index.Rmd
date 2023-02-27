@@ -6,11 +6,7 @@ institute: "RStudio, PBC"
 date: "2016/12/12 (updated: `r Sys.Date()`)"
 output:
   xaringan::moon_reader:
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
+    css: [default,hygge,rutgers,rutgers-font]
 ---
 
 # Level 1
@@ -43,14 +39,14 @@ mtcars %>%
 ---
 # a table
 
-
+.Large [
 ```{r,echo=FALSE,warning=FALSE,message=FALSE}
 read.csv(file=here("data","tidy","mtcars_tidy")) %>%
   mutate_if(is.numeric,round,digit=2) %>%
   arrange(cyl) %>%
   knitr::kable()
 ```
-
+]
 
 
 
